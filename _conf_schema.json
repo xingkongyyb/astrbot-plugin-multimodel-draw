@@ -1,0 +1,95 @@
+{
+    "api_key": {
+        "type": "string",
+        "description": "Apilio API Key",
+        "hint": "留空则读取环境变量 APILIO_API_KEY",
+        "default": ""
+    },
+    "api_base": {
+        "type": "string",
+        "description": "接口地址",
+        "hint": "默认 https://api.apilio.ai",
+        "default": "https://api.apilio.ai"
+    },
+    "model": {
+        "type": "string",
+        "description": "生图模型",
+        "hint": "默认 gpt-image-2",
+        "default": "gpt-image-2"
+    },
+    "size": {
+        "type": "string",
+        "description": "图片尺寸（Seedream 5.0 lite 要求总像素 ≥ 3,686,400，即至少 1920x1920）",
+        "hint": "可用 2K / 3K / 4K 或宽x高像素值，如 2048x2048（乘号用字母 x，不是 *）",
+        "default": "2K"
+    },
+    "poll_interval_seconds": {
+        "type": "int",
+        "description": "轮询间隔（秒）",
+        "default": 4
+    },
+    "max_wait_seconds": {
+        "type": "int",
+        "description": "最大等待时间（秒）",
+        "default": 180
+    },
+    "doubao_api_key": {
+        "type": "string",
+        "description": "豆包/火山方舟 API Key（兜底生图）",
+        "hint": "留空则读取环境变量 DOUBAO_KEY",
+        "default": ""
+    },
+    "doubao_api_base": {
+        "type": "string",
+        "description": "豆包/火山方舟接口地址",
+        "default": "https://ark.cn-beijing.volces.com/api/v3"
+    },
+    "doubao_model": {
+        "type": "string",
+        "description": "豆包生图模型",
+        "default": "doubao-seedream-5-0-pro-260628"
+    },
+    "vision_model": {
+        "type": "string",
+        "description": "图片识别/分析模型",
+        "default": "gpt-5.6-luna"
+    },
+    "doubao_vision_model": {
+        "type": "string",
+        "description": "豆包识图/多模态模型（Apilio 识图失败时兜底）",
+        "default": "doubao-seed-evolving"
+    },
+    "mode": {
+        "type": "string",
+        "description": "生图模式：sequential 顺序降级 / concurrent 并发容错",
+        "default": "sequential"
+    },
+    "providers": {
+        "type": "list",
+        "description": "生图提供商注册表（每个元素含 id/type/api_base/api_key/model 等）"
+    },
+    "send_mode": {
+        "description": "发送方式",
+        "type": "string",
+        "hint": "file=文件形式（原图，不经过 QQ 图片压缩，推荐）；image=图片消息形式（会被 QQ 压缩）",
+        "default": "file"
+    },
+    "video_send_mode": {
+        "description": "视频发送方式",
+        "type": "string",
+        "hint": "video=视频消息（可直接播放）；file=文件形式（失败时自动回退）",
+        "default": "video"
+    },
+    "image_provider_id": {
+        "type": "string",
+        "description": "当前生图模型（提供商 id）",
+        "hint": "在「生图管理」面板用下拉框切换；留空 = 按优先级自动选路",
+        "default": ""
+    },
+    "video_provider_id": {
+        "type": "string",
+        "description": "当前生视频模型（提供商 id）",
+        "hint": "在「生图管理」面板用下拉框切换；留空 = 按优先级自动选路",
+        "default": ""
+    }
+}

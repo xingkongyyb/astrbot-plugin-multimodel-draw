@@ -1,0 +1,9 @@
+name: astrbot_plugin_apilio_draw
+display_name: 多模型生图
+desc: 多后端生图插件（GPT 中转 4K / 火山 Seedream / 任意 OpenAI 兼容或自定义模板）。支持 /画图、/生图、/绘图、/ai生图 指令，参考图生图、角色记忆、抠图与识图，WebUI 面板管理提供商与用量。
+version: "1.1.0"
+author: Codex
+repo: ""
+pages:
+  - name: dashboard
+    title: 生图管理
